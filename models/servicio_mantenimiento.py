@@ -15,10 +15,14 @@ class ServicioMantenimiento(models.Model):
     default=fields.Date.context_today, required=True)
     descripcion = fields.Text(string='Descripción del Problema', required=True)
     estado = fields.Selection([
-    ('pendiente', 'Pendiente'),
-    ('en_proceso', 'En Proceso'),
-    ('finalizado', 'Finalizado')
-    ], string='Estado', default='pendiente', required=True)
+        ('pendiente', 'Pendiente'),
+        ('en_proceso', 'En Proceso'),
+        ('finalizado', 'Finalizado')
+        ], string='Estado', 
+        default='pendiente', 
+        required=True)
+
+
     fecha_reparacion = fields.Date(string='Fecha de Reparación')
     costo = fields.Float(string='Costo de Reparación')
     fecha_termino = fields.Date(string='Fecha de Término')
